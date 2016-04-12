@@ -224,10 +224,90 @@ public class HuffmanTree implements Serializable {
         String EncodedSymbolList = Htree.toString();
 
         // Decode huffman codes to symbıls
-        String code = "110000100111111100101000011";
+        String code = "110010000010011110110101100111010";
         String decodedCode = Htree.decode(code);
         System.out.println("Code to Message : \n"+code+" : \t"+decodedCode);
 
     }
+
+    /**
+     * Method to encode string  message into Huffman encodes.
+     *
+     * @param message The input message as a String
+     *                which is composed on the specified alphabet in the book
+     * @param huffmanTree It’s created huffman code for the alphabet
+     * @return The encoded message as a String zero and ones.
+     * @throws NullTreeException when huffmanTree is null
+     */
+    public String encode(String message,BinaryTree huffmanTree) throws NullTreeException {
+
+        StringBuilder encodeOfString = new StringBuilder(); /* Make A StringBuilder */
+
+        /* İf BinaryTree is null then  return null */
+        if(huffTree == null)
+            throw new NullTreeException();
+
+        /*if string is empty */
+        else if(message.length() == 0)
+            return "";
+
+        /*Find the encode*/
+        else{
+            for(int index = 0; index < message.length() ;++index){
+                encodeOfString.append(findEncodeOfGivenCharacter(message.charAt(index),huffTree));
+            }
+        }
+
+        return encodeOfString.toString(); /*return encode */
+    }// end of method encode
+
+
+    /**
+     *   Method to encode Character into Huffman encodes.
+     *
+     *  @param symbol was searched in the huffmanTree
+     *  @param huffmanTree It’s created huffman code for the alphabet
+     *  @return The encoded message as a String zero and ones.
+     *  if not found then return "* NOT FOUND *" string
+     */
+    private String findEncodeOfGivenCharacter (Character symbol,BinaryTree huffmanTree){
+
+        StringBuilder encodeOfChar = new StringBuilder(); /* Make A StringBuilder */
+        BinaryTree<HuffData> currentTree = huffmanTree; /* Current Tree */
+
+        /* İf currentTree is null then  return "*" */
+        if (currentTree == null) {
+            return encodeOfChar.append("*").toString();
+        }
+
+        /*if finded */
+        if (currentTree.getData().getSymbol() != null) {
+            if (symbol.compareTo(currentTree.getData().symbol) == 0){
+                return encodeOfChar.toString();
+            }
+        }
+
+        /* Left Side of tree */
+        StringBuilder leftSide = new StringBuilder();
+        leftSide.append("0");
+        leftSide.append(findEncodeOfGivenCharacter(symbol,currentTree.getLeftSubtree()));
+
+        /* Right Side of tree */
+        StringBuilder rightSide = new StringBuilder();
+        rightSide.append("1");
+        rightSide.append(findEncodeOfGivenCharacter(symbol,currentTree.getRightSubtree()));
+
+        /*Assignments of strings */
+        String leftSideString = new String(leftSide);
+        String rightSideString = new String(rightSide);
+
+        if(!leftSideString.contains("*"))
+            return leftSideString;  /* if found on the left */
+        else if(!rightSideString.contains("*"))
+            return rightSideString; /* if found on the right */
+        else
+            return "* NOT FOUND *";/* if not found */
+    }// end of method findEncodeOfGivenCharacter
+
 }
 /*</listing>*/
