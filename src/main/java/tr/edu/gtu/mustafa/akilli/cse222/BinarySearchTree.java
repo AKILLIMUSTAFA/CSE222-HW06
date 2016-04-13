@@ -7,15 +7,14 @@ package tr.edu.gtu.mustafa.akilli.cse222;
  */
 /*<listing chapter="6" section="4">*/
 
-        import java.util.List;
-        import java.util.ArrayList;
+        import java.util.*;
 
 /**
  * A class to represent a binary search tree.
  * @author Koffman and Wolfgang
  */
-public class BinarySearchTree<E extends Comparable<E>>
-        extends BinaryTree<E>{
+public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
+
     // Data Fields
 
     /** Return value from the public add method. */
@@ -203,29 +202,136 @@ public class BinarySearchTree<E extends Comparable<E>>
             return findLargestChild(parent.right);
         }
     }
-    /*</listing>*/
 
-// Insert solution to programming exercise 2, section 4, chapter 6 here
-
-// Insert solution to programming exercise 3, section 4, chapter 6 here
-
-    public static void main(String[] args) {
-
-        BinarySearchTree<Integer> Btree = new BinarySearchTree<Integer>();
-        Btree.add(2);
-        Btree.add(1);
-        Btree.add(12);
-        Btree.add(20);
-        Btree.add(11);
-        Btree.add(0);
-
-        //System.out.println(Btree.find(21));
-        System.out.println(Btree.toString());
-        Btree.add(15);
-        System.out.println(Btree.toString());
-        Btree.delete(11);
-        System.out.println(Btree.toString());
+    /**
+     * Iterator
+     *
+     * @return Iterator for tree
+     */
+    public Iterator<E> iterator() {
+        return new IteratorClass();
     }
+
+    /**
+     *  Inner Class
+     *  Iterator class which iterate binarySearchTree which implemented in the book
+     *  Iterator traverse tree ascending order.
+     */
+    private class IteratorClass implements Iterator<E> {
+
+        private Stack<E> stack;
+        private E next;
+
+        public IteratorClass(){
+            setStack();
+            if(getRightSubtree() != null)
+                fillStack (getRightSubtree());
+            if(root != null)
+                getStack().push(getData());
+            if(getLeftSubtree() != null)
+                fillStack (getLeftSubtree());
+        }
+
+        /**
+         * Returns {@code true} if the iteration has more elements.
+         * (In other words, returns {@code true} if {@link #next} would
+         * return an element rather than throwing an exception.)
+         *
+         * @return {@code true} if the iteration has more elements
+         */
+        public boolean hasNext() {
+
+            try{
+                getStack().peek();
+                return true;
+            }catch (EmptyStackException e){
+                return false;
+            }
+        }
+
+        /**
+         * Returns the next element in the iteration.
+         *
+         * @return the next element in the iteration
+         * @throws NoSuchElementException if the iteration has no more elements
+         */
+        public E next() throws NoSuchElementException{
+            try{
+                next = getStack().pop();
+                return next;
+            }catch (EmptyStackException e){
+                throw new NoSuchElementException();
+            }
+        }
+
+        /**
+         * Removes from the underlying collection the last element returned
+         * by this iterator (optional operation).  This method can be called
+         * only once per call to {@link #next}.  The behavior of an iterator
+         * is unspecified if the underlying collection is modified while the
+         * iteration is in progress in any way other than by calling this
+         * method.
+         *
+         * @throws IllegalStateException         if the {@code next} method has not
+         *                                       yet been called, or the {@code remove} method has already
+         *                                       been called after the last call to the {@code next}
+         *                                       method
+         */
+        public void remove() {
+            if(delete(next) == null)
+                    throw new IllegalStateException();
+        }
+
+        /**
+         * Fill Stack like ascending order.
+         *
+         * @param binaryTree for stack
+         */
+        private void fillStack (BinaryTree<E> binaryTree){
+            if(binaryTree.getRightSubtree() != null){
+                fillStack (binaryTree.getRightSubtree());
+            }
+            getStack().push(binaryTree.getData());
+            if(binaryTree.getLeftSubtree() != null){
+                fillStack (binaryTree.getLeftSubtree());
+            }
+        }
+
+        /**
+         * Get Stack
+         *
+         * @return stack of tree
+         */
+        public Stack<E> getStack() {
+            return stack;
+        }
+
+        /**
+         * Set Stack
+         */
+        public void setStack() {
+            this.stack = new Stack<E>();
+        }
+
+        /**
+         * Get Next
+         *
+         * @return Next element of tree
+         */
+        public E getNext() {
+            return next;
+        }
+
+        /**
+         * Set Next
+         *
+         * @param newNext element
+         */
+        public void setNext(E newNext) {
+            this.next = newNext;
+        }
+    }
+
 }
 /*</listing>*/
 

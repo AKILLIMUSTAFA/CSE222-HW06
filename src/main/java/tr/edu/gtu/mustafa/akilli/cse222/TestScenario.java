@@ -1,5 +1,7 @@
 package tr.edu.gtu.mustafa.akilli.cse222;
 
+import java.util.Iterator;
+
 /**
  * HW06_131044017_Mustafa_Akilli
  *
@@ -53,14 +55,68 @@ public class TestScenario
         huffmanTree.buildTree(symbols);
 
         System.out.println("PART 1 TEST");
+        System.out.println();
 
+        /*Print to screen */
         (huffmanTree).toString();
 
+        /*Print stars*/
         System.out.println("********************");
 
+        /*Print*/
         System.out.println("mustafa : " + huffmanTree.encode("mustafa",huffmanTree.huffTree));
         System.out.println("akilli  : " + huffmanTree.encode("akilli",huffmanTree.huffTree));
         System.out.println("&       : " + huffmanTree.encode("*",huffmanTree.huffTree));
+
+
+        System.out.println();
+        System.out.println();
+        System.out.println("PART 2 TEST");
+        System.out.println();
+
+        BinarySearchTree<Integer> Btree = new BinarySearchTree<Integer>();
+        Btree.add(2);
+        Btree.add(1);
+        Btree.add(12);
+        Btree.add(20);
+        Btree.add(11);
+        Btree.add(0);
+        Btree.add(15);
+
+        /*Print to screen */
+        System.out.println(Btree.toString());
+
+        /*Make iterator */
+        Iterator<Integer> iter = Btree.iterator(); /*Iterator */
+
+        /*Print all element */
+        while(iter.hasNext()){
+            System.out.print(iter.next());
+            if(iter.hasNext())
+                System.out.print("-");
+        }
+        System.out.println();
+
+        /*Make iterator */
+        iter = Btree.iterator(); /*Iterator */
+
+        /*Remove 12 */
+        while(iter.hasNext()){
+            if(iter.next() == 12){
+                iter.remove();
+                System.out.println("Remove 12: ");
+            }
+        }
+
+        /*Make iterator */
+        iter = Btree.iterator(); /*Iterator */
+
+        /*Print all element */
+        while(iter.hasNext()){
+            System.out.print(iter.next());
+            if(iter.hasNext())
+                System.out.print("-");
+        }
 
 
     }

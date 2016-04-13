@@ -178,58 +178,6 @@ public class HuffmanTree implements Serializable {
         return encodedCodes;
     }
 
-    /*</listing>*/
-
-// Insert solution to programming exercise 1, section 6, chapter 6 here
-
-    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-
-        HuffmanTree Htree = new HuffmanTree();
-
-        // Create symbol array
-        HuffData[] symbols = {
-                new HuffData(186, '_'),
-                new HuffData(103, 'e'),
-                new HuffData(80, 't'),
-                new HuffData(64, 'a'),
-                new HuffData(63, 'o'),
-                new HuffData(57, 'i'),
-                new HuffData(57, 'n'),
-                new HuffData(51, 's'),
-                new HuffData(48, 'r'),
-                new HuffData(47, 'h'),
-                new HuffData(32, 'd'),
-                new HuffData(32, 'l'),
-                new HuffData(23, 'u'),
-                new HuffData(22, 'c'),
-                new HuffData(21, 'f'),
-                new HuffData(20, 'm'),
-                new HuffData(18, 'w'),
-                new HuffData(16, 'y'),
-                new HuffData(15, 'g'),
-                new HuffData(15, 'p'),
-                new HuffData(13, 'b'),
-                new HuffData(8, 'v'),
-                new HuffData(5, 'k'),
-                new HuffData(1, 'j'),
-                new HuffData(1, 'q'),
-                new HuffData(1, 'x'),
-                new HuffData(1, 'z')
-        };
-
-        // Build hufffman tree
-        Htree.buildTree(symbols);
-
-        // Print huffman codes of the symbols
-        String EncodedSymbolList = Htree.toString();
-
-        // Decode huffman codes to symbıls
-        String code = "110010000010011110110101100111010";
-        String decodedCode = Htree.decode(code);
-        System.out.println("Code to Message : \n"+code+" : \t"+decodedCode);
-
-    }
-
     /**
      * Method to encode string  message into Huffman encodes.
      *

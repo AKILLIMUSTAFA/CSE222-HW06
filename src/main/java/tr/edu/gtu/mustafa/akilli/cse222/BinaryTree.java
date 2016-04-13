@@ -12,9 +12,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Serializable;
+        import java.io.InputStream;
+        import java.io.InputStreamReader;
+        import java.io.Serializable;
 
 /**
  * Class for a binary tree that stores type E objects.
