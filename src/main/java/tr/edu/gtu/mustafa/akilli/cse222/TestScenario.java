@@ -1,5 +1,6 @@
 package tr.edu.gtu.mustafa.akilli.cse222;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
@@ -117,6 +118,984 @@ public class TestScenario
             if(iter.hasNext())
                 System.out.print("-");
         }
+
+
+
+
+
+
+
+        MyComparator myComparator = new MyComparator();
+        ArrayListPriorityQueue<Integer> arrayListPriorityQueue = new ArrayListPriorityQueue<Integer>(myComparator);
+        VectorPriorityQueue<Integer> vectorPriorityQueue = new VectorPriorityQueue<Integer>(myComparator);
+        LinkedListPriorityQueue linkedListPriorityQueue = new LinkedListPriorityQueue(myComparator);
+        BinarySearchTreePriorityQueue<Integer> binarySearchTreePriorityQueue = new BinarySearchTreePriorityQueue<Integer>(myComparator);
+        ArrayList<Integer> myArrayList1 = new ArrayList<Integer>();
+        ArrayList<Integer> myArrayList10 = new ArrayList<Integer>();
+        ArrayList<Integer> myArrayList100 = new ArrayList<Integer>();
+        ArrayList<Integer> myArrayList1000 = new ArrayList<Integer>();
+        ArrayList<Integer> myArrayList10000 = new ArrayList<Integer>();
+        ArrayList<Integer> myArrayList100000 = new ArrayList<Integer>();
+        ArrayList<Integer> myArrayList1000000 = new ArrayList<Integer>();
+        ArrayList<Integer> myArrayList10000000 = new ArrayList<Integer>();
+
+        long startTime;
+        int randomNumber;
+        int size;
+        long endTime;
+        long timeofExe;
+
+        /* For 1 */
+        for (int index = 0; index < 1; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList1.add(randomNumber);
+        }
+
+        /* For 10 */
+        for (int index = 0; index < 10; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList10.add(randomNumber);
+        }
+
+        /* For 100 */
+        for (int index = 0; index < 100; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList100.add(randomNumber);
+        }
+
+        /* For 1.000 */
+        for (int index = 0; index < 1000; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList1000.add(randomNumber);
+        }
+
+        /* For 10.000 */
+        for (int index = 0; index < 10000; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList10000.add(randomNumber);
+        }
+
+        /* For 100.000 */
+        for (int index = 0; index < 100000; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList100000.add(randomNumber);
+        }
+
+        /* For 1.000.000 */
+        for (int index = 0; index < 1000000; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList1000000.add(randomNumber);
+        }
+
+        /* For 10.000.000 */
+        for (int index = 0; index < 10000000; ++index) {
+            randomNumber = (int) (Math.random() * 1000 + 1);
+            myArrayList10000000.add(randomNumber);
+        }
+
+
+        /*For 1 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList1.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("\nArray List Enqueue(1) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(1) : " + timeofExe);
+
+
+        /*For 10 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList10.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Enqueue(10) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(10) : " + timeofExe);
+
+
+
+
+
+        /*For 100 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList100.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Enqueue(100) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(100) : " + timeofExe);
+
+
+
+        /*For 1.000 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList1000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Enqueue(1000) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(1000) : " + timeofExe);
+
+
+
+        /*For 10.000 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList10000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Enqueue(10000) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(10000) : " + timeofExe);
+
+
+
+        /*For 100.000 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100000.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList100000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Enqueue(100000) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(100000) : " + timeofExe);
+
+
+
+
+        /*For 1.000.000 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000000.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList1000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Enqueue(1000000) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(1000000) : " + timeofExe);
+
+
+
+        /*For 10.000.000 Array List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000000.size(); ++index) {
+            arrayListPriorityQueue.enqueue(myArrayList10000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Enqueue(10000000) : " + timeofExe);
+
+        size = arrayListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            arrayListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Array List Dequeue(10000000) : " + timeofExe);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*For 1 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList1.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(1) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(1) : " + timeofExe);
+
+
+        /*For 10 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList10.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(10) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(10) : " + timeofExe);
+
+
+
+
+
+        /*For 100 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList100.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(100) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(100) : " + timeofExe);
+
+
+
+        /*For 1.000 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList1000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(1000) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(1000) : " + timeofExe);
+
+
+
+        /*For 10.000 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList10000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(10000) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(10000) : " + timeofExe);
+
+
+
+        /*For 100.000 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100000.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList100000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(100000) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(100000) : " + timeofExe);
+
+
+
+
+        /*For 1.000.000 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000000.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList1000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(1000000) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(1000000) : " + timeofExe);
+
+
+
+        /*For 10.000.000 Vector */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000000.size(); ++index) {
+            vectorPriorityQueue.enqueue(myArrayList10000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Enqueue(10000000) : " + timeofExe);
+
+        size = vectorPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            vectorPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Vector Dequeue(10000000) : " + timeofExe);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*For 1 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList1.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(1) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(1) : " + timeofExe);
+
+
+        /*For 10 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList10.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(10) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(10) : " + timeofExe);
+
+
+
+
+
+        /*For 100 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList100.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(100) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(100) : " + timeofExe);
+
+
+
+        /*For 1.000 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList1000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(1000) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(1000) : " + timeofExe);
+
+
+
+        /*For 10.000 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList10000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(10000) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(10000) : " + timeofExe);
+
+
+
+        /*For 100.000 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100000.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList100000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(100000) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(100000) : " + timeofExe);
+
+
+
+
+        /*For 1.000.000 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000000.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList1000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(1000000) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(1000000) : " + timeofExe);
+
+
+
+        /*For 10.000.000 Linked List */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000000.size(); ++index) {
+            linkedListPriorityQueue.enqueue(myArrayList10000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Enqueue(10000000) : " + timeofExe);
+
+        size = linkedListPriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            linkedListPriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("Linked List Dequeue(10000000) : " + timeofExe);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*For 1 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList1.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(1) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(1) : " + timeofExe);
+
+
+        /*For 10 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList10.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(10) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(10) : " + timeofExe);
+
+
+
+
+
+        /*For 100 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList100.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(100) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(100) : " + timeofExe);
+
+
+
+        /*For 1.000 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList1000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(1000) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(1000) : " + timeofExe);
+
+
+
+        /*For 10.000 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList10000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(10000) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(10000) : " + timeofExe);
+
+
+
+        /*For 100.000 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList100000.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList100000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(100000) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(100000) : " + timeofExe);
+
+
+
+
+        /*For 1.000.000 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList1000000.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList1000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(1000000) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(1000000) : " + timeofExe);
+
+
+
+        /*For 10.000.000 BinarySearchTree */
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < myArrayList10000000.size(); ++index) {
+            binarySearchTreePriorityQueue.enqueue(myArrayList10000000.get(index));
+        }
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Enqueue(10000000) : " + timeofExe);
+
+        size = binarySearchTreePriorityQueue.size();
+
+        startTime = System.currentTimeMillis();
+
+        for (int index = 0; index < size; ++index)
+            binarySearchTreePriorityQueue.dequeue();
+
+        endTime = System.currentTimeMillis();
+        timeofExe = endTime - startTime;
+        System.out.println("BinarySearchTree Dequeue(10000000) : " + timeofExe);
+
+
+
 
 
     }

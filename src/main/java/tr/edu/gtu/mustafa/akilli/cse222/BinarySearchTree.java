@@ -302,14 +302,14 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
          *
          * @return stack of tree
          */
-        public Stack<E> getStack() {
+        private Stack<E> getStack() {
             return stack;
         }
 
         /**
          * Set Stack
          */
-        public void setStack() {
+        private void setStack() {
             this.stack = new Stack<E>();
         }
 
@@ -318,7 +318,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
          *
          * @return Next element of tree
          */
-        public E getNext() {
+        private E getNext() {
             return next;
         }
 
@@ -327,7 +327,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
          *
          * @param newNext element
          */
-        public void setNext(E newNext) {
+        private void setNext(E newNext) {
             this.next = newNext;
         }
     }
