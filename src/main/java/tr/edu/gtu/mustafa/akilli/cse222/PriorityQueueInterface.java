@@ -16,18 +16,19 @@ public interface PriorityQueueInterface<E> {
 
     /**
      * Insert an item into the priority queue.
-     * @pre The ArrayList theData is in heap order.
-     * @post The item is in the priority queue and
+     * pre The ArrayList theData is in heap order.
+     * post The item is in the priority queue and
      *       theData is in heap order.
      * @param item The item to be inserted
      * @throws NullPointerException if the item to be inserted is null.
+     * @return if anqueue is successfully than return true, othewise return false
      */
     boolean enqueue(E item);
 
     /**
      * Remove an item from the priority queue
-     * @pre The ArrayList theData is in heap order.
-     * @post Removed smallest item, theData is in heap order.
+     * pre The ArrayList theData is in heap order.
+     * post Removed smallest item, theData is in heap order.
      * @return The item with the smallest priority value or null if empty.
      */
     E dequeue();

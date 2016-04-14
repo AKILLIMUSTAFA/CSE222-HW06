@@ -26,7 +26,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
     /*<listing chapter="6" number="3">*/
     /**
      * Starter method find.
-     * @pre The target object must implement
+     * pre The target object must implement
      *      the Comparable interface.
      * @param target The Comparable object being sought
      * @return The object, if found, otherwise null
@@ -62,7 +62,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
     /*<listing chapter="6" number="4">*/
     /**
      * Starter method add.
-     * @pre The object to insert must implement the
+     * pre The object to insert must implement the
      *      Comparable interface.
      * @param item The object being inserted
      * @return true if the object is inserted, false
@@ -76,7 +76,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
 
     /**
      * Recursive add method.
-     * @post The data field addReturn is set true if the item is added to
+     * post The data field addReturn is set true if the item is added to
      *       the tree, false if the item is already in the tree.
      * @param localRoot The local root of the subtree
      * @param item The object to be inserted
@@ -107,7 +107,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
     /*<listing chapter="6" number="5">*/
     /**
      * Starter method delete.
-     * @post The object is not in the tree.
+     * post The object is not in the tree.
      * @param target The object to be deleted
      * @return The object deleted from the tree
      *         or null if the object was not in the tree
@@ -121,7 +121,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
 
     /**
      * Recursive delete method.
-     * @post The item is not in the tree;
+     * post The item is not in the tree;
      *       deleteReturn is equal to the deleted item
      *       as it was stored in the tree or null
      *       if the item was not found.
@@ -186,7 +186,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E>{
      * Find the node that is the
      * inorder predecessor and replace it
      * with its left child (if any).
-     * @post The inorder predecessor is removed from the tree.
+     * post The inorder predecessor is removed from the tree.
      * @param parent The parent of possible inorder
      *        predecessor (ip)
      * @return The data in the ip

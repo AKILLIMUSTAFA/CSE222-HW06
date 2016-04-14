@@ -72,7 +72,7 @@ public class HuffmanTree implements Serializable {
     /*<listing chapter="6" number="10">*/
     /**
      * Builds the Huffman tree using the given alphabet and weights.
-     * @post  huffTree contains a reference to the Huffman tree.
+     * post  huffTree contains a reference to the Huffman tree.
      * @param symbols An array of HuffData objects
      */
     public void buildTree(HuffData[] symbols) {

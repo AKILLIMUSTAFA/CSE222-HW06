@@ -25,6 +25,8 @@ public class BinarySearchTreePriorityQueue<E extends Comparable<E>> implements P
 
     /**
      * One parameter Constructor
+     *
+     * @param newComparator for the tree
      */
     public BinarySearchTreePriorityQueue(Comparator<E> newComparator){
         setTheData();
@@ -59,7 +61,7 @@ public class BinarySearchTreePriorityQueue<E extends Comparable<E>> implements P
     /**
      * Set Comparator
      *
-     * @param newComparator
+     * @param newComparator for the tree
      */
     private void setComparator(Comparator<E> newComparator) {
         this.comparator = newComparator;
@@ -70,9 +72,10 @@ public class BinarySearchTreePriorityQueue<E extends Comparable<E>> implements P
      *
      * @param item The item to be inserted
      * @throws NullPointerException if the item to be inserted is null.
-     * @pre The BinarySearchTree theData is in heap order.
-     * @post The item is in the priority queue and
+     * pre The BinarySearchTree theData is in heap order.
+     * post The item is in the priority queue and
      * theData is in heap order.
+     * @return if anqueue is successfully than return true, othewise return false
      */
     public boolean enqueue(E item) {
 
@@ -89,8 +92,8 @@ public class BinarySearchTreePriorityQueue<E extends Comparable<E>> implements P
      * Remove an item from the priority queue
      *
      * @return The item with the smallest priority value or null if empty.
-     * @pre The BinarySearchTree theData is in heap order.
-     * @post Removed smallest item, theData is in heap order.
+     * pre The BinarySearchTree theData is in heap order.
+     * post Removed smallest item, theData is in heap order.
      */
     public E dequeue() {
         if (isEmpty()) {
@@ -141,12 +144,12 @@ public class BinarySearchTreePriorityQueue<E extends Comparable<E>> implements P
     /**
      * Compare two items using either a Comparator object's compare method
      * or their natural ordering using method compareTo.
-     * @pre If comparator is null, left and right implement Comparable<E>.
+     * pre If comparator is null, left and right implement Comparable.
      * @param left One item
      * @param right The other item
      * @return Negative int if left less than right,
      *         0 if left equals right,
-     *         positive int if left > right
+     *         positive int if left bigger than right
      * @throws ClassCastException if items are not Comparable
      */
     private int compare(E left, E right) {
@@ -159,7 +162,7 @@ public class BinarySearchTreePriorityQueue<E extends Comparable<E>> implements P
 
     /**
      * Starter method add.
-     * @pre The object to insert must implement the
+     * pre The object to insert must implement the
      *      Comparable interface.
      * @param item The object being inserted
      * @return true if the object is inserted, false
@@ -173,7 +176,7 @@ public class BinarySearchTreePriorityQueue<E extends Comparable<E>> implements P
 
     /**
      * Recursive add method.
-     * @post The data field addReturn is set true if the item is added to
+     * post The data field addReturn is set true if the item is added to
      *       the tree, false if the item is already in the tree.
      * @param localRoot The local root of the subtree
      * @param item The object to be inserted

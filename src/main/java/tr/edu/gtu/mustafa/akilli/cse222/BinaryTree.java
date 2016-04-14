@@ -74,9 +74,14 @@ public class BinaryTree<E> implements Serializable {
         this.root = root;
     }
 
+
     /**
      * Constructs a new binary tree with data in its root,leftTree
      * as its left subtree and rightTree as its right subtree.
+     *
+     * @param data new data
+     * @param leftTree new left tree
+     * @param rightTree new right tree
      */
     public BinaryTree(E data, BinaryTree<E> leftTree,
                       BinaryTree<E> rightTree) {
@@ -172,7 +177,7 @@ public class BinaryTree<E> implements Serializable {
     /*<listing chapter="6" number="2">*/
     /**
      * Method to read a binary tree.
-     * @pre The input consists of a preorder traversal
+     * pre The input consists of a preorder traversal
      *      of the binary tree. The line "null" indicates a null tree.
      * @param bR The input file
      * @return The binary tree
